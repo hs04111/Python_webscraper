@@ -25,9 +25,9 @@ def extract_job(html):
     company_anchor = company.find("a")
     if company:
         if company_anchor is not None:
-            company = str(company_anchor.string)
+            company = company_anchor.get_text(strip=True)
         else:
-            company = str(company.string)
+            company = company.get_text(strip=True)
             company = company.strip()
     else:
         company = None
