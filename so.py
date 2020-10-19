@@ -2,11 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 
 
-URL = f"https://stackoverflow.com/jobs?q=python&pg=2"
+URL = f"https://stackoverflow.com/jobs?q=python"
 
 
 def get_last_page():
-    result = requests.get(URL)
+    result = requests.get(f"{URL}&pg=2")
     soup = BeautifulSoup(result.text, "html.parser")
     pages = soup.find("div", {"class": "s-pagination"}).find_all("a")
     last_pages = pages[-2].get_text(strip=True)
