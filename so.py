@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-URL = f"https://stackoverflow.com/jobs?q=python"
+URL = f"https://stackoverflow.com/jobs?q=java"
 
 
 def get_last_page():
